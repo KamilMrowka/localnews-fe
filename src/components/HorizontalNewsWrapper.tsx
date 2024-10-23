@@ -6,7 +6,7 @@ interface HorizontalNewsWrapperProps {
 
 export default function HorizontalNewsWrapper({ children }: HorizontalNewsWrapperProps) {
     return (
-        <div>
+        <div className='md:columns-2 lg:columns-3'>
             {children}
         </div>
     );

@@ -1,3 +1,5 @@
+import CitySearch from "./CitySearch"
+
 interface Props {
     viewing?: string,
     className?:string
@@ -6,15 +8,10 @@ interface Props {
 export default function Navbar({ viewing, className }: Props) {
     return (
         <nav className={ className ? className : ""}>
-            <ul className="text-white flex justify-between my-10">
-                <li>LocalNews</li>
-                <li>
-                    <form>
-                        <input type="text" placeholder="Find your city" className="rounded-xl p-1 text-white bg-gray-600"></input>
-                    </form>
-                </li>
-                <li>
-                    Scope: {viewing ? viewing : "Global"}
+            <ul className="text-white md:flex text-center md:text-start justify-between my-10">
+                <li className="text-4xl tracking-wider mb-5 md:mb-0">Local<span className="text-green-500 font-bold">News</span></li>
+                <li className="">
+                    <CitySearch></CitySearch>
                 </li>
             </ul>
         </nav>

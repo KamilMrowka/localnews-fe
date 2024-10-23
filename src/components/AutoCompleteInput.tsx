@@ -1,6 +1,5 @@
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-
-const suggestions = ["Apple", "Banana", "ban", "banny", "bansiof", "banfaos", "banafofyho", "Cherry", "Date", "Elderberry"];
 
 const AutoCompleteInput: React.FC = () => {
   const [inputValue, setInputValue] = useState<string>('');
@@ -19,6 +18,7 @@ const AutoCompleteInput: React.FC = () => {
       setFilteredSuggestions([]);
     }
   }, [inputValue]);
+
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'ArrowDown') {
