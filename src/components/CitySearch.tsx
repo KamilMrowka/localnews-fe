@@ -21,7 +21,6 @@ export default function CitySearch() {
     const selectedCity = useStore((state) => state.selectedCity);
     const setSelectedCity = useStore((state) => state.setSelectedCity);
 
-
     const fetchCities = async (searchQuery: string) => {
         try {
             const response = await axios.get(`http://localhost:8080/api/v1/cities?query=${searchQuery}`);
@@ -76,7 +75,7 @@ export default function CitySearch() {
                     fetchedCities.length > 0 &&
                     fetchedCities.map((city) => {
                         return <li onClick={() => {
-                            hardSaveSelectedCity({city:city, setCity:setSelectedCity})
+                            hardSaveSelectedCity({city:city, setSelectedCity:setSelectedCity})
                             setQuery('')
                         }} className="mb-3 md:mb-1 hover:cursor-pointer hover:text-green-500 hover:font-extrabold" key={city.id}>{city.name + ", " + city.stateName}</li>
                     })

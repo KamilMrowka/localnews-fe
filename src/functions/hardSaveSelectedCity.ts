@@ -1,11 +1,12 @@
 import { City } from "../components/CitySearch";
 
 interface Props {
-    setCity: React.Dispatch<React.SetStateAction<City>>,
     city: City,
+    setSelectedCity: (city: City) => void
 }
 
-export default function hardSaveSelectedCity( { setCity, city}: Props ) {
+export default function hardSaveSelectedCity( {city, setSelectedCity}: Props ) {
+
     sessionStorage.setItem("selected-city", JSON.stringify(city));
-    setCity(city);
+    setSelectedCity(city);
 }
