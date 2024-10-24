@@ -24,7 +24,7 @@ export default function CitySearch() {
 
     const fetchCities = async (searchQuery: string) => {
         try {
-            const response = await axios.get(`${basicUrl}/cities?query=${searchQuery}`);
+            const response = await axios.get(`${basicUrl}cities?query=${searchQuery}`);
             setFetchedCities(response.data);
         } catch (error) {
             console.error("error fetching cities:", error);
