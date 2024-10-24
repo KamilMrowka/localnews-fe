@@ -20,10 +20,11 @@ export default function CitySearch() {
 
     const selectedCity = useStore((state) => state.selectedCity);
     const setSelectedCity = useStore((state) => state.setSelectedCity);
+    const basicUrl = useStore((state) => state.basicUrl);
 
     const fetchCities = async (searchQuery: string) => {
         try {
-            const response = await axios.get(`http://localhost:8080/api/v1/cities?query=${searchQuery}`);
+            const response = await axios.get(`${basicUrl}/cities?query=${searchQuery}`);
             setFetchedCities(response.data);
         } catch (error) {
             console.error("error fetching cities:", error);

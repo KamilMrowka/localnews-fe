@@ -15,6 +15,7 @@ interface StoreState {
     setSelectedCity: (city: City) => void;
     selectedArticle: Article |  null;
     setSelectedArticle: (article: Article | null) => void;
+    basicUrl: string
 }
 
 const useStore = create<StoreState>((set) => ({
@@ -22,6 +23,7 @@ const useStore = create<StoreState>((set) => ({
     selectedCity: getSelectedCity(defaultCity),
     setSelectedCity: (city: City) => set({ selectedCity: city }),
     setSelectedArticle: (article: Article | null) => set({ selectedArticle: article }),
+    basicUrl: "http://51.20.79.86:8080/api/v1/"
 }));
 
 export default useStore;

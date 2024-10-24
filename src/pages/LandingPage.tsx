@@ -23,12 +23,13 @@ export default function LandingPage () {
     const [page, setPage] = useState<number>(0);
     const [global, setGlobal] = useState<boolean>(true);
     const selectedCity = useStore((state) => state.selectedCity);
+    const basicUrl = useStore((state) => state.basicUrl);
 
     useEffect(() => {
         if (selectedCity.id === -1) {
             const getGlobalArticles = async () => {
                 try {
-                    const response = await axios.get(`http://localhost:8080/api/v1/news?page=${page}`);
+                    const response = await axios.get(`${basicUrl}news?page=${page}`);
                     setResponse(response.data);
                 } catch (error) {
                     console.log(error);
@@ -59,13 +60,13 @@ export default function LandingPage () {
     
     const fetchLocalOrGlobalArticles = async (city_id: number, getPage: number) => {
         try {
-            const response = await axios.get(`http://localhost:8080/api/v1/news/local?page=${getPage}&city_id=${city_id}`);
+            const response = await axios.get(`${basicUrl}news/local?page=${getPage}&city_id=${city_id}`);
             if (response.data && response.data.articles.length > 0) {
                 setGlobal(false);
                 return response.data;
             } else {
                 setGlobal(true);
-                const globalArticles = await axios.get(`http://localhost:8080/api/v1/news?page=${getPage}`);
+                const globalArticles = await axios.get(`${basicUrl}news?page=${getPage}`);
                 return globalArticles.data;
             }
         } catch (error) {
