@@ -14,7 +14,7 @@ export default function ArticlePreview ( { article, className }: Props) {
 
     const navigate = useNavigate();
     return (
-        <div className={"bg-gray-600 p-4 md:rounded-md md:h-64 overflow-hidden text-white flex " + " " + (className?className:"")}>
+        <div className={"bg-gray-800 p-4 md:rounded-md md:h-64 overflow-hidden text-white flex " + " " + (className?className:"")}>
             <div className="">
                 <h2 onClick={() => {
                     setSelectedArticle(article);
