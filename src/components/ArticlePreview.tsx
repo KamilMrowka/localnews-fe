@@ -9,7 +9,6 @@ interface Props {
 
 export default function ArticlePreview ( { article, className }: Props) {
 
-    const selectedArticle = useStore((state) => state.selectedArticle);
     const setSelectedArticle = useStore((state) => state.setSelectedArticle);
 
     const navigate = useNavigate();

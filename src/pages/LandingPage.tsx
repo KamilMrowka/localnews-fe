@@ -4,7 +4,6 @@ import HorizontalNewsWrapper from "../components/HorizontalNewsWrapper";
 import Navbar from "../components/Navbar";
 import axios from "axios";
 import useStore from "../functions/store";
-import { useNavigate } from "react-router-dom";
 
 export interface Article {
     title: string,
@@ -20,7 +19,6 @@ export interface LandingPageResponse {
 }
 
 export default function LandingPage () {
-    const navigate = useNavigate();
     const [response, setResponse] = useState<LandingPageResponse>();
     const [page, setPage] = useState<number>(0);
     const [global, setGlobal] = useState<boolean>(true);

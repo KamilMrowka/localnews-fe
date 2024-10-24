@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import CitySearch, { City } from "./CitySearch"
+import CitySearch from "./CitySearch"
 
 interface Props {
     className?:string
