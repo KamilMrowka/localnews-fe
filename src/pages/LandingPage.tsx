@@ -82,7 +82,7 @@ export default function LandingPage () {
                 className="mb-10">
             </Navbar>
             <div className="flex justify-between flex-col md:flex-row">
-                <main className="w-full bg-gray-600 py-5 md:p-5 rounded-lg mb-20">
+                <main className="w-full bg-gray-600 py-5 p-3 md:p-5 rounded-lg mb-20">
                     <h1 className="text-white text-5xl mb-10 mx-3 md:mx-0 text-start">
                         {global && selectedCity.id == -1 &&
                             "Find your city to get a local experience!"
