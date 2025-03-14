@@ -23,7 +23,7 @@ const useStore = create<StoreState>((set) => ({
     selectedCity: getSelectedCity(defaultCity),
     setSelectedCity: (city: City) => set({ selectedCity: city }),
     setSelectedArticle: (article: Article | null) => set({ selectedArticle: article }),
-    basicUrl: "http://16.170.178.215:8080/api/v1/"
+    basicUrl: "http://13.48.254.174/api/v1/"
 }));
 
 export default useStore;
